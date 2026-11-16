@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en-SG" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brown Girl Bakes — Premium Brownies Bakery, Singapore</title>
+<meta name="description" content="Brown Girl Bakes is a Singapore brownie bakery making thick, fudgy, freshly baked brownies — Double Chocolate, Banana Peanut Butter, Matcha Strawberry, Biscoff and Tiramisu. Made with all-natural, halal ingredients and no preservatives. 16 pieces per box from S$29.90.">
+<meta name="theme-color" content="#3D2603">
+<meta property="og:title" content="Brown Girl Bakes — Premium Brownies, Singapore">
+<meta property="og:description" content="Thick, fudgy, freshly baked brownies made in Singapore. Explore the menu and send an order enquiry.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/og-cover.jpg">
+<link rel="icon" type="image/png" href="images/cookie.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/hero-boxes.webp">
+<script>
+/* Theme: apply before first paint to avoid a flash */
+(function(){
+  var t=null; try{ t=localStorage.getItem("bgb-theme"); }catch(e){}
+  if(!t) t = (window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+  document.documentElement.setAttribute("data-theme", t);
+})();
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Bakery","name":"Brown Girl Bakes","description":"Premium brownies bakery in Singapore","image":"images/og-cover.jpg","address":{"@type":"PostalAddress","addressCountry":"SG","addressLocality":"Singapore"},"telephone":"+6580132196","email":"brown.girl.bakes.sg@gmail.com","sameAs":["https://instagram.com/brown.girl.bakes.sg"],"priceRange":"S$29.90–S$34.90","servesCuisine":"Desserts, Brownies","currenciesAccepted":"SGD"}
+</script>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<style>
+/* =========================================================
+   DESIGN TOKENS — colours per theme
+   ========================================================= */
+:root{
+  --choc:#3D2603; --choc-deep:#241505; --cream:#F7F1E8; --pink:#F2C6CC; --pink-deep:#D9919E;
+  --serif:"Instrument Serif", "Cormorant Garamond", Georgia, serif;
+  --sans:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --ease-soft:cubic-bezier(.34,1.3,.64,1);
+  --nav-h:76px;
+  --pad:clamp(20px,5vw,72px);
+  --radius:6px;
+}
+[data-theme="light"]{
+  --bg:#F7F1E8; --bg-alt:#EFE6D8; --surface:#FFFCF7; --text:#3D2603; --muted:#7A6148;
+  --line:rgba(18,16,16,.9); --line-soft:rgba(61,38,3,.16);
+  --menu-bg:#3D2603; --menu-text:#F7F1E8; --menu-muted:rgba(247,241,232,.72); --menu-line:rgba(247,241,232,.28);
+  --card:#F7F1E8; --card-text:#3D2603; --card-muted:#6B5440;
+  --btn-bg:#3D2603; --btn-fg:#F7F1E8; --input:#FBF7F0; --footer:#241505;
+  --accent:#D9919E; --nav-solid:rgba(247,241,232,.9);
+  color-scheme:light;
+}
+[data-theme="dark"]{
+  --bg:#16100A; --bg-alt:#1D150E; --surface:#221811; --text:#F1E7D8; --muted:#B9A389;
+  --line:rgba(241,231,216,.32); --line-soft:rgba(241,231,216,.12);
+  --menu-bg:#0F0A06; --menu-text:#F1E7D8; --menu-muted:rgba(241,231,216,.68); --menu-line:rgba(241,231,216,.18);
+  --card:#1F160F; --card-text:#F1E7D8; --card-muted:#B9A389;
+  --btn-bg:#F1E7D8; --btn-fg:#2A1A0B; --input:#1A120C; --footer:#0B0704;
+  --accent:#E9B3BC; --nav-solid:rgba(22,16,10,.88);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .5s var(--ease),color .5s var(--ease)}
+img,svg{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+::selection{background:var(--pink);color:var(--choc)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.container{width:100%;max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+
+/* type */
+.eyebrow{font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;display:inline-flex;align-items:center;gap:12px;color:var(--muted)}
+.eyebrow::before{content:"";width:24px;height:1px;background:currentColor}
+.h-display{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.01em;margin:0}
+.h-display em{font-style:italic}
+.lead{font-size:17px;color:var(--muted);max-width:46ch;margin:0}
+
+/* buttons */
+.btn{--b-bg:var(--btn-bg);--b-fg:var(--btn-fg);display:inline-flex;align-items:center;gap:12px;padding:15px 26px;border-radius:999px;border:1px solid var(--b-bg);background:var(--b-bg);color:var(--b-fg);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:transform .45s var(--ease),background .35s,color .35s,border-color .35s,box-shadow .45s var(--ease)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(0,0,0,.45)}
+.btn .arr{transition:transform .45s var(--ease)}
+.btn:hover .arr{transform:translateX(4px)}
+.btn--outline{background:transparent;color:var(--text);border-color:var(--line)}
+.btn--outline:hover{background:var(--text);color:var(--bg);border-color:var(--text)}
+.btn--cream{--b-bg:#F7F1E8;--b-fg:#3D2603}
+.btn--ghost-light{background:transparent;color:#F7F1E8;border-color:rgba(247,241,232,.55)}
+.btn--ghost-light:hover{background:#F7F1E8;color:#3D2603;border-color:#F7F1E8}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:calc(var(--d,0)*90ms)}
+.reveal.in{opacity:1;transform:none}
+
+/* =========================================================
+   NAV
+   ========================================================= */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;height:var(--nav-h);display:flex;align-items:center;color:#F7F1E8;transition:background .45s,height .45s var(--ease),color .45s,border-color .45s;border-bottom:1px solid transparent}
+.nav::before{content:"";position:absolute;inset:0 0 -30px 0;background:linear-gradient(180deg,rgba(24,14,5,.55),rgba(24,14,5,0));pointer-events:none;z-index:-1;transition:opacity .45s}
+.nav .container{display:flex;align-items:center;gap:28px}
+.nav__logo{position:relative;width:74px;height:56px;flex:none}
+.nav__logo img{position:absolute;inset:0;margin:auto;width:66px;transition:opacity .4s}
+.nav__logo .dark{opacity:0}
+.nav__links{display:flex;gap:clamp(18px,2.6vw,40px);list-style:none;margin:0 auto;padding:0}
+.nav__links a{position:relative;text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.06em;padding:6px 0;opacity:.9}
+.nav__links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.nav__links a:hover::after,.nav__links a.active::after{transform:scaleX(1);transform-origin:left}
+.nav__right{display:flex;align-items:center;gap:12px}
+.nav__cta{padding:11px 20px;font-size:12px}
+.nav:not(.scrolled) .nav__cta{--b-bg:#F7F1E8;--b-fg:#3D2603}
+.nav.scrolled{background:var(--nav-solid);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom-color:var(--line-soft);color:var(--text);--nav-h:66px}
+.nav.scrolled::before{opacity:0}
+[data-theme="light"] .nav.scrolled .nav__logo .dark{opacity:1}
+[data-theme="light"] .nav.scrolled .nav__logo .light{opacity:0}
+.nav__burger{display:none;width:44px;height:44px;border-radius:50%;border:1px solid currentColor;background:none;color:inherit;position:relative}
+.nav__burger span{position:absolute;left:13px;right:13px;height:1.5px;background:currentColor;transition:transform .4s var(--ease)}
+.nav__burger span:nth-child(1){top:17px}.nav__burger span:nth-child(2){top:25px}
+.nav.open .nav__burger span:nth-child(1){transform:translateY(4px) rotate(45deg)}
+.nav.open .nav__burger span:nth-child(2){transform:translateY(-4px) rotate(-45deg)}
+
+/* ---------- brownie theme toggle ---------- */
+.theme-toggle{position:relative;width:46px;height:46px;border-radius:50%;border:1px solid currentColor;background:transparent;color:inherit;display:grid;place-items:center;padding:0;transition:transform .5s var(--ease-soft),background .35s}
+.theme-toggle:hover{transform:rotate(-8deg) scale(1.06)}
+.theme-toggle svg{width:30px;height:30px;overflow:visible}
+.theme-toggle .tg-top{transition:fill .5s var(--ease)}
+.theme-toggle .tg-front{transition:fill .5s var(--ease)}
+.theme-toggle .tg-side{transition:fill .5s var(--ease)}
+.theme-toggle .tg-drip{transition:fill .5s var(--ease),transform .6s var(--ease-soft);transform-origin:center top}
+.theme-toggle .tg-sun,.theme-toggle .tg-moon{transition:opacity .45s,transform .6s var(--ease-soft);transform-box:fill-box;transform-origin:center}
+/* light = frosted, pink-glazed brownie + sparkle; dark = ganache brownie + moon */
+[data-theme="light"] .theme-toggle .tg-top{fill:#F2C6CC}
+[data-theme="light"] .theme-toggle .tg-drip{fill:#F2C6CC}
+[data-theme="light"] .theme-toggle .tg-moon{opacity:0;transform:scale(.3) rotate(-60deg)}
+[data-theme="dark"] .theme-toggle .tg-top{fill:#2A1407}
+[data-theme="dark"] .theme-toggle .tg-drip{fill:#2A1407}
+[data-theme="dark"] .theme-toggle .tg-sun{opacity:0;transform:scale(.3) rotate(60deg)}
+.theme-toggle.bump svg{animation:bump .7s var(--ease-soft)}
+@keyframes bump{0%{transform:scale(1)}30%{transform:scale(.82) rotate(-6deg)}65%{transform:scale(1.1) rotate(4deg)}100%{transform:none}}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{position:relative;min-height:max(640px,100svh);display:flex;align-items:flex-end;overflow:hidden;background:#1d1108;color:#F7F1E8}
+.hero__photo{position:absolute;inset:-6% 0;will-change:transform}
+.hero__photo img{width:100%;height:100%;object-fit:cover;object-position:66% 60%;transform:scale(1.06);transition:transform 2.4s var(--ease)}
+.loaded .hero__photo img{transform:scale(1)}
+.hero__shade{position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(24,13,4,.9) 0%,rgba(24,13,4,.72) 30%,rgba(24,13,4,.18) 58%,rgba(24,13,4,0) 75%),
+  linear-gradient(0deg,rgba(24,13,4,.75) 0%,rgba(24,13,4,0) 38%)}
+.hero__content{position:relative;z-index:2;width:100%;padding-top:calc(var(--nav-h) + 40px);padding-bottom:clamp(36px,6vh,64px)}
+.hero__copy{max-width:560px}
+.hero .eyebrow{color:var(--pink)}
+.hero h1{font-size:clamp(44px,5.4vw,82px);margin:22px 0 22px;color:#F7F1E8}
+.hero h1 em{color:var(--pink)}
+.hero p{font-size:clamp(16px,1.2vw,18px);color:rgba(247,241,232,.82);max-width:44ch;margin:0}
+.hero__ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.hero__facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:clamp(44px,8vh,90px);border-top:1px solid rgba(247,241,232,.28)}
+.hero__facts div{padding:18px 20px 0 0;font-size:13px;color:rgba(247,241,232,.72)}
+.hero__facts strong{display:block;font-family:var(--serif);font-weight:400;font-size:22px;color:#F7F1E8;letter-spacing:0}
+.hero .load{opacity:0;transform:translateY(20px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:calc(var(--d,0)*120ms + 150ms)}
+.loaded .hero .load{opacity:1;transform:none}
+
+/* strip */
+.strip{border-bottom:1px solid var(--line-soft);background:var(--bg);overflow:hidden;padding:16px 0}
+.strip__track{display:flex;width:max-content;animation:marq 45s linear infinite}
+.strip__item{display:flex;align-items:center;gap:26px;padding-right:26px;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;color:var(--muted)}
+.strip__item i{width:5px;height:5px;border-radius:50%;background:var(--accent)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* section heads */
+.section{padding:clamp(80px,10vw,136px) 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:clamp(40px,5vw,64px)}
+.head h2{font-size:clamp(38px,4.4vw,64px);margin-top:18px}
+.head h2 em{color:var(--accent)}
+
+/* =========================================================
+   MENU
+   ========================================================= */
+.menu{background:var(--menu-bg);color:var(--menu-text);transition:background .5s var(--ease)}
+.menu .eyebrow{color:var(--pink)}
+.menu .lead{color:var(--menu-muted)}
+.menu__grid{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(16px,1.8vw,24px)}
+.card{grid-column:span 2;background:var(--card);color:var(--card-text);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .6s var(--ease),box-shadow .6s var(--ease),background .5s}
+.card:nth-child(4),.card:nth-child(5){grid-column:span 3}
+.card:hover{transform:translateY(-6px);box-shadow:0 28px 50px -30px rgba(0,0,0,.7)}
+.card__photo{position:relative;aspect-ratio:4/3.4;overflow:hidden;background:#d9c9b3}
+.card:nth-child(4) .card__photo,.card:nth-child(5) .card__photo{aspect-ratio:16/9.4}
+.card__photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease),opacity .8s var(--ease)}
+.card:hover .card__photo img{transform:scale(1.06)}
+.card__photo .alt{opacity:0}
+.card:hover .card__photo .alt{opacity:1}
+.card__photo .soon{position:absolute;inset:0;display:grid;place-items:center;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#6B5440}
+.card__num{position:absolute;top:14px;left:14px;z-index:2;background:rgba(247,241,232,.92);color:#3D2603;font-size:11px;font-weight:600;letter-spacing:.12em;padding:6px 10px;border-radius:999px}
+.card__body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.card__tags{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--card-muted)}
+.card__name{font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.2vw,32px);line-height:1.05;margin:10px 0 10px}
+.card__desc{margin:0 0 22px;font-size:15px;color:var(--card-muted);line-height:1.6}
+.card__foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line-soft);padding-top:16px}
+[data-theme="light"] .card__foot{border-top-color:rgba(18,16,16,.85)}
+.card__price{font-family:var(--serif);font-size:22px}
+.card__price small{font-family:var(--sans);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--card-muted);margin-left:6px}
+.card__link{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:9px 14px;border:1px solid currentColor;border-radius:999px;transition:background .35s,color .35s,gap .4s var(--ease)}
+.card__link:hover{background:var(--card-text);color:var(--card);gap:12px}
+.menu__note{margin-top:44px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;border-top:1px solid var(--menu-line);padding-top:24px;font-size:14px;color:var(--menu-muted)}
+
+
+/* ingredients promise */
+.promise{background:var(--bg);border-bottom:1px solid var(--line-soft)}
+.promise__grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(36px,6vw,96px);align-items:start}
+.promise h2{font-size:clamp(38px,4.4vw,64px);margin-top:18px}
+.promise h2 em{color:var(--accent)}
+.promise__text{font-size:clamp(17px,1.35vw,20px);line-height:1.6;margin:8px 0 30px;max-width:52ch}
+.promise__list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.promise__list li{display:grid;grid-template-columns:48px 1fr;gap:12px;padding:18px 0;border-bottom:1px solid var(--line-soft);font-size:14.5px;color:var(--muted)}
+.promise__list strong{display:block;font-family:var(--serif);font-weight:400;font-size:22px;color:var(--text);line-height:1.2;margin-bottom:2px}
+.promise__n{font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--accent);padding-top:5px}
+@media (max-width:860px){.promise__grid{grid-template-columns:minmax(0,1fr)}}
+/* =========================================================
+   REVIEWS
+   ========================================================= */
+.reviews{background:var(--bg-alt)}
+.carousel__viewport{overflow:hidden;margin:0 -10px;padding:10px;touch-action:pan-y}
+.carousel__track{display:flex;transition:transform .9s var(--ease)}
+.slide{flex:0 0 calc(100%/var(--per,3));padding:0 10px}
+.quote{height:100%;margin:0;background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--radius);padding:clamp(24px,2.8vw,36px);display:flex;flex-direction:column;transition:border-color .4s,transform .5s var(--ease),background .5s}
+.quote:hover{border-color:var(--line);transform:translateY(-3px)}
+.quote__stars{display:flex;gap:3px;color:var(--accent);margin-bottom:18px}
+.quote__stars svg{width:14px;height:14px}
+.quote__text{font-family:var(--serif);font-size:clamp(20px,1.6vw,23px);line-height:1.4;margin:0 0 26px;flex:1}
+.quote__who{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line-soft);padding-top:18px}
+.quote__avatar{width:40px;height:40px;border-radius:50%;background:var(--text);color:var(--bg);display:grid;place-items:center;font-weight:600;font-size:14px;flex:none}
+.quote__name{font-weight:600;font-size:14px}
+.quote__meta{font-size:12.5px;color:var(--muted)}
+.carousel__ui{display:flex;align-items:center;gap:24px;margin-top:30px}
+.carousel__dots{display:flex;gap:8px}
+.carousel__dots button{width:8px;height:8px;padding:0;border-radius:999px;border:1px solid var(--text);background:transparent;opacity:.5;transition:width .5s var(--ease),opacity .3s,background .3s}
+.carousel__dots button[aria-current="true"]{width:30px;background:var(--text);opacity:1}
+.carousel__progress{flex:1;height:1px;background:var(--line-soft);position:relative}
+.carousel__progress i{position:absolute;left:0;top:0;height:1px;background:var(--text);width:0}
+.carousel__arrows{display:flex;gap:8px}
+.carousel__arrows button{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--text);display:grid;place-items:center;transition:background .3s,color .3s}
+.carousel__arrows button:hover{background:var(--text);color:var(--bg)}
+.carousel__arrows svg{width:18px;height:18px}
+.reviews__note{font-size:12px;color:var(--muted);margin-top:20px}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+.contact{background:var(--bg);border-top:1px solid var(--line-soft);transition:background .5s}
+.contact__grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(40px,6vw,96px);align-items:start}
+.contact h2{font-size:clamp(38px,4.4vw,64px);margin:18px 0 20px}
+.contact h2 em{color:var(--accent)}
+.contact__list{list-style:none;padding:0;margin:36px 0 0;border-top:1px solid var(--line-soft)}
+.contact__list li{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:15px 0;border-bottom:1px solid var(--line-soft);align-items:baseline}
+.contact__list .k{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.contact__list a,.contact__list .v{font-size:16px;font-weight:500;text-decoration:none}
+.contact__list a:hover{text-decoration:underline;text-underline-offset:4px}
+.socials{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap}
+.social{display:inline-flex;align-items:center;gap:9px;padding:10px 16px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:background .3s,color .3s}
+.social svg{width:16px;height:16px}
+.social:hover{background:var(--text);color:var(--bg)}
+
+.form{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--radius);padding:clamp(24px,3.2vw,44px);transition:background .5s}
+.form__title{display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-bottom:1px solid var(--line-soft);padding-bottom:16px;margin-bottom:24px}
+.form__title h3{font-family:var(--serif);font-weight:400;font-size:28px;margin:0}
+.form__title span{font-size:12px;color:var(--muted)}
+.form__row{display:grid;grid-template-columns:1fr 1fr;gap:18px 18px}
+.field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.field input,.field select,.field textarea{min-width:0;max-width:100%}
+.prefix input{flex:1}
+.contact__list a,.footer a{overflow-wrap:anywhere}
+.field--full{grid-column:1/-1}
+.field label,.field legend{font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--text)}
+.field .opt{color:var(--muted);font-weight:400}
+.field input,.field select,.field textarea{width:100%;font:inherit;font-size:16px;color:var(--text);background:var(--input);border:1px solid var(--line);border-radius:4px;padding:13px 14px;transition:border-color .25s,box-shadow .25s;appearance:none;-webkit-appearance:none}
+[data-theme="dark"] .field input,[data-theme="dark"] .field select,[data-theme="dark"] .field textarea{border-color:rgba(241,231,216,.22)}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23998066' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:12px;padding-right:38px}
+.field textarea{min-height:116px;resize:vertical}
+.field ::placeholder{color:var(--muted);opacity:.7}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--text);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 35%,transparent)}
+.field.invalid input,.field.invalid select{border-color:#C0482F}
+.field .err{display:none;font-size:12.5px;color:#C0482F}
+[data-theme="dark"] .field .err{color:#F08A70}
+.field.invalid .err{display:block}
+.prefix{display:flex}
+.prefix span{display:grid;place-items:center;padding:0 14px;border:1px solid var(--line);border-right:0;border-radius:4px 0 0 4px;font-size:15px;font-weight:500;color:var(--muted)}
+[data-theme="dark"] .prefix span{border-color:rgba(241,231,216,.22)}
+.prefix input{border-radius:0 4px 4px 0}
+.choice{display:flex;flex-direction:row;flex-wrap:wrap;gap:8px;border:0;padding:0;margin:0}
+.choice legend{width:100%;margin-bottom:7px}
+.choice label{position:relative;cursor:pointer;font-weight:500;letter-spacing:0}
+.choice input{position:absolute;inset:0;width:1px;height:1px;opacity:0;pointer-events:none}
+.choice span{display:inline-block;padding:10px 16px;border:1px solid var(--line);border-radius:999px;font-size:14px;transition:background .3s,color .3s}
+[data-theme="dark"] .choice span{border-color:rgba(241,231,216,.22)}
+.choice input:checked+span{background:var(--text);color:var(--bg);border-color:var(--text)}
+.choice input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+.form__submit{margin-top:26px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.form__submit small{font-size:12.5px;color:var(--muted);max-width:32ch}
+.form__done{display:none}
+.form.sent .form__fields{display:none}
+.form.sent .form__done{display:block;animation:fadeUp .7s var(--ease)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.form__done h3{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3vw,38px);margin:10px 0 10px;line-height:1.1}
+.form__done p{color:var(--muted);margin:0}
+.form__done pre{white-space:pre-wrap;font-family:var(--sans);font-size:14px;background:var(--input);border:1px solid var(--line-soft);border-radius:4px;padding:16px;max-height:220px;overflow:auto;margin:18px 0}
+.form__done .actions{display:flex;gap:10px;flex-wrap:wrap}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer{background:var(--footer);color:#F1E7D8;padding:clamp(64px,8vw,100px) 0 28px;transition:background .5s}
+.footer__top{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px;padding-bottom:52px;border-bottom:1px solid rgba(241,231,216,.18)}
+.footer__logo{width:140px}
+.footer__tag{font-family:var(--serif);font-size:21px;margin:18px 0 0;max-width:20ch;color:rgba(241,231,216,.85)}
+.footer h4{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--pink);margin:6px 0 16px}
+.footer ul{list-style:none;margin:0;padding:0;display:grid;gap:9px;font-size:15px}
+.footer a{text-decoration:none;color:rgba(241,231,216,.82);transition:color .3s}
+.footer a:hover{color:#fff}
+.footer__bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:24px;font-size:12.5px;color:rgba(241,231,216,.55)}
+.toTop{background:none;border:0;color:inherit;font-size:12.5px;padding:0}
+.toTop:hover{color:#fff}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,200%);opacity:0;background:var(--text);color:var(--bg);padding:13px 20px;border-radius:999px;font-size:14px;z-index:120;transition:transform .5s var(--ease),opacity .5s}
+.toast.show{transform:translate(-50%,0);opacity:1}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width:1080px){
+  .menu__grid{grid-template-columns:repeat(2,1fr)}
+  .card,.card:nth-child(4){grid-column:span 1}
+  .card:nth-child(5){grid-column:1/-1}
+  .card:nth-child(4) .card__photo{aspect-ratio:4/3.4}
+  .contact__grid{grid-template-columns:minmax(0,1fr)}
+  .footer__top{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  :root{--nav-h:66px}
+  .nav__links{position:fixed;inset:0;flex-direction:column;justify-content:center;align-items:center;gap:26px;background:var(--bg);color:var(--text);transform:translateY(-100%);transition:transform .7s var(--ease);z-index:-1;margin:0}
+  .nav__links a{font-family:var(--serif);font-size:38px;letter-spacing:0}
+  .nav.open .nav__links{transform:none}
+  .nav.open{color:var(--text)}
+  .nav.open::before{opacity:0}
+  [data-theme="light"] .nav.open .nav__logo .dark{opacity:1}
+  [data-theme="light"] .nav.open .nav__logo .light{opacity:0}
+  .nav__burger{display:block}
+  .nav__cta{display:none}
+  .nav .container{justify-content:space-between}
+  .hero{align-items:flex-end}
+  .hero__photo{inset:0 0 auto 0;height:54svh;-webkit-mask-image:linear-gradient(#000 55%,transparent);mask-image:linear-gradient(#000 55%,transparent)}
+  .hero__content{padding-top:44svh}
+  .hero h1{margin:16px 0}
+  .hero__photo img{object-position:72% 70%}
+  .hero__shade{background:linear-gradient(180deg,rgba(24,13,4,.45) 0%,rgba(24,13,4,0) 18%,rgba(24,13,4,0) 30%,rgba(24,13,4,.85) 50%,rgba(29,17,8,1) 60%)}
+  .hero__facts{grid-template-columns:1fr;margin-top:36px}
+  .hero__facts div{padding:12px 0;border-bottom:1px solid rgba(247,241,232,.15);display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+  .hero__facts strong{font-size:19px}
+}
+@media (max-width:640px){
+  .menu__grid{grid-template-columns:1fr}
+  .card,.card:nth-child(4),.card:nth-child(5){grid-column:auto}
+  .card:nth-child(4) .card__photo,.card:nth-child(5) .card__photo{aspect-ratio:4/3.4}
+  .form__row{grid-template-columns:minmax(0,1fr)}
+  .contact__list li{grid-template-columns:1fr;gap:2px}
+  .footer__top{grid-template-columns:1fr}
+  .carousel__progress{display:none}
+  .carousel__ui{justify-content:space-between}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-rate" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 21l1.6-7L2 9.2l7.1-.6z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M4 20l1.2-4A8 8 0 1 1 8.4 19z"/><path fill="currentColor" d="M9.2 8.1c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .6.5l.7 1.6c.1.2.1.4 0 .6l-.4.6c-.1.2-.2.3 0 .6.5.9 1.3 1.7 2.3 2.2.3.1.4.1.6-.1l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.2.4.4 0 .5-.2 1.3-.9 1.7-.6.4-1.6.5-3.2-.2-1.8-.8-3.3-2.5-3.9-3.6-.6-1-.8-2.1-.1-3.1z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 6l8.5 7 8.5-7" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  </defs>
+</svg>
+
+<!-- =====================================================
+     NAVIGATION
+     ===================================================== -->
+<header class="nav" id="nav">
+  <div class="container">
+    <a href="#home" class="nav__logo" aria-label="Brown Girl Bakes — home">
+      <img class="light" src="images/logo-mark-cream.png" alt="" width="440" height="367">
+      <img class="dark" src="images/logo-mark.png" alt="" width="440" height="367">
+    </a>
+    <nav aria-label="Main" style="margin:0 auto">
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Our Menu</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav__right">
+      <!-- Brownie theme toggle -->
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Toggle light / dark">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <!-- sparkle (light) -->
+          <path class="tg-sun" d="M33 3c.3 2.6 2.4 4.7 5 5-2.6.3-4.7 2.4-5 5-.3-2.6-2.4-4.7-5-5 2.6-.3 4.7-2.4 5-5z" fill="#F2C6CC"/>
+          <!-- moon (dark) -->
+          <path class="tg-moon" d="M35.5 3.5a5 5 0 1 0 3 8.9 4 4 0 1 1-3-8.9z" fill="#F1E7D8"/>
+          <!-- brownie block -->
+          <path class="tg-front" d="M5 17l14 6.5V36L5 29.5z" fill="#3A1F0C"/>
+          <path class="tg-side" d="M19 23.5L35 17v12.5L19 36z" fill="#5A3417"/>
+          <path class="tg-top" d="M5 17l16-6.5L35 17l-16 6.5z"/>
+          <!-- glaze drips over front edges -->
+          <path class="tg-drip" d="M8 18.4l2.6 1.2v3.2c0 1-1.3 1-1.3 0V20.6l-1.3-.6zM14 21.2l2.4 1.1v2.2c0 .9-1.2.9-1.2 0v-1.6L14 22.4zM23.5 21.7l3-1.2v4c0 1.1-1.5 1.1-1.5 0v-2.4l-1.5.6zM30 19.1l2.4-1v2.6c0 .9-1.2.9-1.2 0v-1.2l-1.2.5z"/>
+          <!-- crumb dots -->
+          <circle cx="10" cy="27" r=".9" fill="#1E0F05"/><circle cx="14.5" cy="31" r=".8" fill="#1E0F05"/><circle cx="26" cy="28.5" r=".9" fill="#2E1808"/><circle cx="30.5" cy="25" r=".8" fill="#2E1808"/>
+        </svg>
+      </button>
+      <a href="#contact" class="btn nav__cta">Enquire <span class="arr">→</span></a>
+      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+<section class="hero" id="home" aria-labelledby="heroTitle">
+  <div class="hero__photo" data-parallax="0.12">
+    <img src="images/hero-boxes.webp" alt="Three open Brown Girl Bakes boxes of freshly cut brownies — chocolate ganache, peanut butter and cocoa-dusted tiramisu" width="2400" height="1600" fetchpriority="high" decoding="async">
+  </div>
+  <div class="hero__shade"></div>
+  <div class="container hero__content">
+    <div class="hero__copy">
+      <span class="eyebrow load">Premium brownies · Singapore</span>
+      <h1 class="h-display load" style="--d:1" id="heroTitle">Thick, fudgy &amp; <em>freshly baked.</em></h1>
+      <p class="load" style="--d:2">Dense, gooey brownies finished with glossy ganache, silky spreads and generous toppings — baked in small batches for gifting, celebrations and everyday cravings.</p>
+      <div class="hero__ctas load" style="--d:3">
+        <a href="#menu" class="btn btn--cream">Shop our menu <span class="arr">↓</span></a>
+        <a href="#contact" class="btn btn--ghost-light">Request a quote</a>
+      </div>
+    </div>
+    <div class="hero__facts load" style="--d:4">
+      <div><strong>Box of 16</strong>From S$29.90</div>
+      <div><strong>All-natural &amp; halal</strong>No additives or preservatives</div>
+      <div><strong>Gifting &amp; events</strong>Enquire for bulk orders</div>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true"><div class="strip__track" id="strip"></div></div>
+
+<!-- =====================================================
+     MENU
+     ===================================================== -->
+<section class="menu section" id="menu" aria-labelledby="menuTitle">
+  <div class="container">
+    <div class="head">
+      <div>
+        <span class="eyebrow reveal">Our menu</span>
+        <h2 class="h-display reveal" style="--d:1" id="menuTitle">A little something for <em>every</em> craving.</h2>
+      </div>
+      <p class="lead reveal" style="--d:2">Five signature flavours, each baked until the edges are chewy and the centre stays fudgy — then topped, glazed or dusted by hand.</p>
+    </div>
+    <div class="menu__grid" id="menuGrid"></div>
+    <div class="menu__note reveal">
+      <span>Every box contains 16 pieces. Prices in Singapore dollars (S$). Gifting and bulk orders available on enquiry.</span>
+      <a href="#contact" class="btn btn--cream">Request a quote <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     INGREDIENTS PROMISE
+     ===================================================== -->
+<section class="promise section" id="ingredients" aria-labelledby="promiseTitle">
+  <div class="container promise__grid">
+    <div>
+      <span class="eyebrow reveal">Our ingredients</span>
+      <h2 class="h-display reveal" style="--d:1" id="promiseTitle">Made with <em>real</em>, honest ingredients.</h2>
+    </div>
+    <div>
+      <p class="promise__text reveal" style="--d:2">Every brownie is made from scratch using all-natural ingredients — no additives and no preservatives, just the good stuff baked fresh. All of our ingredients are halal, so everyone at the table can enjoy a box.</p>
+      <ul class="promise__list reveal" style="--d:3">
+        <li><span class="promise__n">01</span><div><strong>All-natural ingredients</strong>Simple, wholesome ingredients you'd find in your own kitchen.</div></li>
+        <li><span class="promise__n">02</span><div><strong>No additives or preservatives</strong>Baked fresh, the way brownies are meant to be.</div></li>
+        <li><span class="promise__n">03</span><div><strong>Halal ingredients</strong>Made to be shared with family, friends and colleagues.</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     REVIEWS
+     ===================================================== -->
+<section class="reviews section" id="reviews" aria-labelledby="reviewsTitle">
+  <div class="container">
+    <div class="head">
+      <div>
+        <span class="eyebrow reveal">Reviews</span>
+        <h2 class="h-display reveal" style="--d:1" id="reviewsTitle">What our customers <em>say.</em></h2>
+      </div>
+    </div>
+    <div class="carousel reveal" id="carousel" aria-roledescription="carousel" aria-label="Customer reviews">
+      <div class="carousel__viewport" id="carViewport"><div class="carousel__track" id="carTrack" aria-live="polite"></div></div>
+      <div class="carousel__ui">
+        <div class="carousel__dots" id="carDots" role="tablist" aria-label="Choose review"></div>
+        <div class="carousel__progress" aria-hidden="true"><i id="carProg"></i></div>
+        <div class="carousel__arrows">
+          <button type="button" id="carPrev" aria-label="Previous review"><svg style="transform:scaleX(-1)"><use href="#i-arrow"/></svg></button>
+          <button type="button" id="carNext" aria-label="Next review"><svg><use href="#i-arrow"/></svg></button>
+        </div>
+      </div>
+      <p class="reviews__note" id="reviewsNote" hidden>Sample reviews shown for layout — replace with real customer feedback.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     CONTACT / QUOTATIONS
+     ===================================================== -->
+<section class="contact section" id="contact" aria-labelledby="contactTitle">
+  <div class="container contact__grid">
+    <div>
+      <span class="eyebrow reveal">Contact &amp; quotations</span>
+      <h2 class="h-display reveal" style="--d:1" id="contactTitle">Let's make your next craving <em>happen.</em></h2>
+      <p class="lead reveal" style="--d:2">Planning a party, sending a thank-you, stocking the office pantry or simply treating yourself? Tell us what you have in mind and we'll get back to you with a quotation.</p>
+      <ul class="contact__list reveal" style="--d:3" id="contactList"></ul>
+      <div class="socials reveal" style="--d:4" id="socials"></div>
+    </div>
+
+    <form class="form reveal" id="enquiryForm" novalidate aria-labelledby="formTitle" style="--d:2">
+      <div class="form__fields">
+        <div class="form__title"><h3 id="formTitle">Quotation enquiry</h3><span>Takes about 2 minutes</span></div>
+        <div class="form__row">
+          <div class="field">
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your full name" required>
+            <span class="err">Please tell us your name.</span>
+          </div>
+          <div class="field">
+            <label for="f-email">Email address</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required>
+            <span class="err">Please enter a valid email address.</span>
+          </div>
+          <div class="field">
+            <label for="f-phone">Contact number</label>
+            <div class="prefix"><span>+65</span><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="8123 4567" required></div>
+            <span class="err">Please enter an 8-digit Singapore number (starting with 3, 6, 8 or 9).</span>
+          </div>
+          <div class="field">
+            <label for="f-type">Enquiry type</label>
+            <select id="f-type" name="type" required>
+              <option value="">Select one…</option>
+              <option>Personal order</option><option>Birthday / party</option><option>Corporate gifting</option>
+              <option>Wedding / event favours</option><option>Festive gifting</option><option>Other</option>
+            </select>
+            <span class="err">Please choose an enquiry type.</span>
+          </div>
+          <div class="field">
+            <label for="f-qty">Quantity / order size</label>
+            <select id="f-qty" name="quantity" required>
+              <option value="">Select order size…</option>
+              <option>1 box</option><option>2 – 5 boxes</option><option>6 – 20 boxes</option>
+              <option>21 – 50 boxes</option><option>50+ boxes (bulk)</option><option>Not sure yet</option>
+            </select>
+            <span class="err">Please choose an order size.</span>
+          </div>
+          <div class="field">
+            <label for="f-date">Preferred date</label>
+            <input id="f-date" name="date" type="date" required>
+            <span class="err" id="dateErr">Please pick a date at least a few days from today.</span>
+          </div>
+          <fieldset class="field field--full choice">
+            <legend>Collection or delivery?</legend>
+            <label><input type="radio" name="fulfilment" value="Self-collection" checked><span>Self-collection</span></label>
+            <label><input type="radio" name="fulfilment" value="Delivery"><span>Delivery</span></label>
+            <label><input type="radio" name="fulfilment" value="Not sure yet"><span>Not sure yet</span></label>
+          </fieldset>
+          <div class="field field--full">
+            <label for="f-msg">Additional requirements <span class="opt">(optional)</span></label>
+            <textarea id="f-msg" name="message" placeholder="Flavours you'd like, dietary notes, gift messages, delivery postal code, event theme…"></textarea>
+          </div>
+        </div>
+        <div class="form__submit">
+          <small>We'll only use your details to reply to this enquiry.</small>
+          <button class="btn" type="submit">Submit enquiry <span class="arr">→</span></button>
+        </div>
+      </div>
+      <div class="form__done" role="status" aria-live="polite">
+        <span class="eyebrow">Enquiry ready</span>
+        <h3 id="doneTitle">Thank you — almost there!</h3>
+        <p id="doneText"></p>
+        <pre id="doneSummary"></pre>
+        <div class="actions">
+          <button class="btn" type="button" id="copyBtn">Copy enquiry</button>
+          <a class="btn btn--outline" id="waBtn" href="#" target="_blank" rel="noopener" hidden>Send via WhatsApp</a>
+          <button class="btn btn--outline" type="button" id="resetBtn">New enquiry</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <img class="footer__logo" src="images/logo-full-cream.png" alt="Brown Girl Bakes logo" width="900" height="924">
+        <p class="footer__tag">Premium brownies, baked fresh in Singapore.</p>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="#home">Home</a></li><li><a href="#menu">Our Menu</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h4>Say hello</h4><ul id="footContact"></ul></div>
+      <div><h4>Follow along</h4><ul id="footSocial"></ul></div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="year"></span> Brown Girl Bakes. All rights reserved.</span>
+      <button class="toTop" id="toTop" type="button">Back to top ↑</button>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* =========================================================
+   CONFIG — edit all business content here
+   ========================================================= */
+const CONFIG = {
+  contact: {
+    email:     "brown.girl.bakes.sg@gmail.com",
+    phone:     "+65 8013 2196",
+    whatsapp:  "6580132196",            // digits only, used for wa.me links
+    instagram: "brown.girl.bakes.sg",    // without @
+    area:      "Singapore",
+    hours:     "Orders by enquiry"
+  },
+  formEndpoint: "",   // optional: Formspree / your API URL — the form POSTs JSON here when set
+  minLeadDays: 3,     // earliest preferred date = today + N days
+
+  // Products — shown in this order. `hover` = optional second photo shown on hover.
+  products: [
+    { name:"Double <em>Chocolate</em>", plain:"Double Chocolate Brownie", tags:"Intense · Glossy ganache",
+      desc:"A dense, fudgy chocolate brownie under a thick layer of glossy chocolate ganache. Chocolate, then more chocolate.",
+      price:"S$ 29.90", unit:"/ box of 16", image:"images/double-chocolate.webp", pos:"50% 55%" },
+    { name:"Banana Peanut <em>Butter</em>", plain:"Banana Peanut Butter Brownie", tags:"Nutty · Banana · Fudgy",
+      desc:"Sweet banana folded through rich chocolate fudge with creamy peanut butter. The lunchbox classic, all grown up.",
+      price:"S$ 32.90", unit:"/ box of 16", image:"images/banana-peanut-butter.webp", pos:"50% 60%" },
+    { name:"Matcha <em>Strawberry</em>", plain:"Matcha Strawberry Brownie", tags:"Earthy · Bright · Fruity",
+      desc:"A deep-green matcha brownie glazed in pink strawberry and finished with a dark chocolate drizzle. Bittersweet, fruity and quietly elegant.",
+      price:"S$ 34.90", unit:"/ box of 16", image:"images/matcha-strawberry.webp", pos:"50% 55%" },
+    { name:"<em>Biscoff</em> Brownie", plain:"Biscoff Brownie", tags:"Caramelised · Spiced · Crunchy",
+      desc:"Fudgy chocolate brownie spread with silky Biscoff and scattered with cookie crumble. Caramel-spiced and dangerously moreish.",
+      price:"S$ 29.90", unit:"/ box of 16", image:"images/biscoff.webp", pos:"45% 55%" },
+    { name:"Tiramisu <em>Brownie</em>", plain:"Tiramisu Brownie", tags:"Creamy · Cocoa-dusted",
+      desc:"A fudgy brownie base topped with a soft, creamy layer and a generous dusting of cocoa — our take on the Italian classic.",
+      price:"S$ 29.90", unit:"/ box of 16", image:"images/tiramisu.webp", hover:"images/tiramisu-closeup.webp", pos:"50% 50%" },
+    // Hidden until photos are ready — add an image and set hidden:false:
+    { name:"Original <em>Brownie</em>", plain:"Original Brownie", tags:"Classic · Dark chocolate", hidden:true,
+      desc:"The one that started it all. A dense fudgy centre and deep dark-chocolate flavour — no distractions needed.",
+      price:"S$ 29.90", unit:"/ box of 16", image:"" },
+    { name:"Salted <em>Caramel</em>", plain:"Salted Caramel Brownie", tags:"Sweet · Salty · Buttery", hidden:true,
+      desc:"Buttery caramel swirled through rich fudge and finished with flaky sea salt. Sweet, salty and very hard to share.",
+      price:"S$ 29.90", unit:"/ box of 16", image:"" }
+  ],
+
+  // Customer reviews (set reviewsArePlaceholders:true to show the "sample reviews" note).
+  reviewsArePlaceholders: false,
+  reviews: [
+    { initials:"T", name:"Tan Kim Kia", meta:"Double Chocolate · Tiramisu", stars:5, text:"Ordered because a friend suggested. Not too sweet which I really liked. The chocolate one was my favourite. Will definitely order again." },
+    { initials:"M", name:"Manoj Kumar", meta:"All flavours", stars:5, text:"Ordered for my daughter's birthday. The brownies finished so fast. Impressively soft and fudgy. Biscoff was my favourite." },
+    { initials:"R", name:"Roshini", meta:"Matcha Strawberry", stars:5, text:"The strawberry topping with the matcha brownie and chocolate drizzle actually works so well and is heavenly. 10/10 recommended flavour." },
+    { initials:"S", name:"Susan Chua", meta:"Corporate gifting", stars:5, text:"Brought 3 boxes to work for a team treat and it disappeared before lunchtime. Definitely ordering more boxes next time." },
+    { initials:"M", name:"Mogha Ramesh", meta:"Tiramisu", stars:5, text:"ONE of the best tiramisu i've ever had. it was honestly so good, especially the cream. had the perfect amount of cocoa and everything just melted in my mouth." },
+    { initials:"Z", name:"Zulfadhli", meta:"Banana Peanut Butter", stars:5, text:"Love a healthy and sweet treat after my gym sess. I customise it to be less sugar and brown sugar. Perfect post-workout snack" }
+  ],
+
+  strip: ["All-natural ingredients", "No additives or preservatives", "Halal ingredients", "16 pieces per box", "Made in Singapore", "Baked fresh"]
+};
+
+/* =========================================================
+   HELPERS & RENDER
+   ========================================================= */
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const C=CONFIG.contact;
+const waLink=C.whatsapp?`https://wa.me/${C.whatsapp}`:"#contact";
+
+const st=CONFIG.strip.map(t=>`<span class="strip__item">${esc(t)}<i></i></span>`).join("");
+$("#strip").innerHTML=st+st;
+
+$("#menuGrid").innerHTML=CONFIG.products.filter(p=>!p.hidden).map((p,i)=>`
+  <article class="card reveal" style="--d:${i%3}">
+    <div class="card__photo">
+      <span class="card__num">No. 0${i+1}</span>
+      ${p.image?`<img src="${esc(p.image)}" alt="${esc(p.plain)} — freshly cut squares in a Brown Girl Bakes box" loading="lazy" decoding="async" style="object-position:${p.pos||"50% 50%"}">`:`<span class="soon">Photo coming soon</span>`}
+      ${p.hover?`<img class="alt" src="${esc(p.hover)}" alt="" loading="lazy" decoding="async">`:""}
+    </div>
+    <div class="card__body">
+      <div class="card__tags">${esc(p.tags)}</div>
+      <h3 class="card__name">${p.name}</h3>
+      <p class="card__desc">${esc(p.desc)}</p>
+      <div class="card__foot">
+        <span class="card__price">${esc(p.price)}<small>${esc(p.unit)}</small></span>
+        <a class="card__link" href="#contact" data-flavour="${esc(p.plain)}">Enquire <svg width="14" height="14"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </article>`).join("");
+
+$("#contactList").innerHTML=`
+  <li><span class="k">Email</span><a href="mailto:${esc(C.email)}">${esc(C.email)}</a></li>
+  <li><span class="k">WhatsApp</span>${C.whatsapp?`<a href="${waLink}" target="_blank" rel="noopener">${esc(C.phone)}</a>`:`<span class="v">${esc(C.phone)}</span>`}</li>
+  <li><span class="k">Instagram</span><a href="https://instagram.com/${esc(C.instagram)}" target="_blank" rel="noopener">@${esc(C.instagram)}</a></li>
+  <li><span class="k">Based in</span><span class="v">${esc(C.area)} · ${esc(C.hours)}</span></li>`;
+$("#socials").innerHTML=`
+  <a class="social" href="https://instagram.com/${esc(C.instagram)}" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>Instagram</a>
+  <a class="social" href="${waLink}" ${C.whatsapp?'target="_blank" rel="noopener"':''}><svg><use href="#i-wa"/></svg>WhatsApp</a>
+  <a class="social" href="mailto:${esc(C.email)}"><svg><use href="#i-mail"/></svg>Email</a>`;
+$("#footContact").innerHTML=`<li><a href="mailto:${esc(C.email)}">${esc(C.email)}</a></li><li>${esc(C.phone)}</li><li>${esc(C.area)}</li>`;
+$("#footSocial").innerHTML=`<li><a href="https://instagram.com/${esc(C.instagram)}" target="_blank" rel="noopener">Instagram</a></li><li><a href="${waLink}">WhatsApp</a></li><li><a href="#contact">Order enquiry</a></li>`;
+$("#year").textContent=new Date().getFullYear();
+
+/* page-load entrance */
+requestAnimationFrame(()=>requestAnimationFrame(()=>document.body.classList.add("loaded")));
+
+/* =========================================================
+   THEME TOGGLE (brownie button)
+   ========================================================= */
+(function(){
+  const btn=$("#themeToggle"), root=document.documentElement;
+  const sync=()=>{ const d=root.getAttribute("data-theme")==="dark";
+    btn.setAttribute("aria-pressed",d); btn.setAttribute("aria-label",d?"Switch to light theme":"Switch to dark theme");
+    document.querySelector('meta[name="theme-color"]').setAttribute("content",d?"#16100A":"#3D2603"); };
+  sync();
+  btn.addEventListener("click",()=>{
+    const next=root.getAttribute("data-theme")==="dark"?"light":"dark";
+    root.setAttribute("data-theme",next); try{localStorage.setItem("bgb-theme",next);}catch(e){}
+    btn.classList.remove("bump"); void btn.offsetWidth; btn.classList.add("bump"); sync();
+  });
+})();
+
+/* =========================================================
+   NAV
+   ========================================================= */
+const nav=$("#nav"), burger=$("#burger"), hero=$("#home");
+const onScroll=()=>nav.classList.toggle("scrolled", window.scrollY > hero.offsetHeight - 90);
+window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
+burger.addEventListener("click",()=>{const o=nav.classList.toggle("open"); burger.setAttribute("aria-expanded",o); burger.setAttribute("aria-label",o?"Close menu":"Open menu"); document.body.style.overflow=o?"hidden":"";});
+document.addEventListener("click",e=>{
+  const a=e.target.closest('a[href^="#"]'); if(!a) return;
+  const id=a.getAttribute("href"); const t=id.length>1&&document.querySelector(id); if(!t) return;
+  e.preventDefault();
+  nav.classList.remove("open"); burger.setAttribute("aria-expanded","false"); document.body.style.overflow="";
+  const y=id==="#home"?0:t.getBoundingClientRect().top+window.scrollY-(id==="#menu"?0:40);
+  window.scrollTo({top:y,behavior:"smooth"});
+  if(a.dataset.flavour){const m=$("#f-msg"); if(!m.value.includes(a.dataset.flavour)) m.value=(m.value?m.value+"\n":"")+"Interested in: "+a.dataset.flavour;}
+});
+$("#toTop").addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+const linkFor=id=>$(`.nav__links a[href="#${id}"]`);
+const navIO=new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){ $$(".nav__links a").forEach(a=>a.classList.remove("active")); linkFor(en.target.id)?.classList.add("active"); }}),{rootMargin:"-45% 0px -50% 0px"});
+["home","menu","reviews","contact"].forEach(id=>navIO.observe(document.getElementById(id)));
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target);} }),{threshold:.12,rootMargin:"0px 0px -6% 0px"});
+$$(".reveal").forEach(el=>io.observe(el));
+
+/* parallax */
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches, px=$$("[data-parallax]"); let ticking=false;
+function parallax(){ const vh=innerHeight; px.forEach(el=>{ const r=el.parentElement.getBoundingClientRect(); if(r.bottom<0||r.top>vh) return; el.style.translate=`0 ${(-(r.top)*parseFloat(el.dataset.parallax)).toFixed(1)}px`; }); ticking=false; }
+if(!reduce){ addEventListener("scroll",()=>{ if(!ticking){ticking=true;requestAnimationFrame(parallax);} },{passive:true}); }
+
+/* =========================================================
+   REVIEWS CAROUSEL
+   ========================================================= */
+(function(){
+  const track=$("#carTrack"), dotsEl=$("#carDots"), prog=$("#carProg"), car=$("#carousel"), vp=$("#carViewport");
+  const R=CONFIG.reviews, DELAY=5200;
+  if(CONFIG.reviewsArePlaceholders) $("#reviewsNote").hidden=false;
+  track.innerHTML=R.map((r,i)=>`
+    <div class="slide" role="group" aria-roledescription="slide" aria-label="Review ${i+1} of ${R.length}">
+      <figure class="quote">
+        <div class="quote__stars" aria-label="${r.stars} out of 5 stars">${Array.from({length:5},(_,k)=>`<svg style="opacity:${k<r.stars?1:.25}"><use href="#i-rate"/></svg>`).join("")}</div>
+        <blockquote class="quote__text">“${esc(r.text)}”</blockquote>
+        <figcaption class="quote__who"><span class="quote__avatar">${esc(r.initials)}</span><span><div class="quote__name">${esc(r.name)}</div><div class="quote__meta">${esc(r.meta)}</div></span></figcaption>
+      </figure>
+    </div>`).join("");
+  let idx=0, per=0, start=0, paused=false;
+  const perView=()=>innerWidth<700?1:innerWidth<1080?2:3, maxIdx=()=>Math.max(0,R.length-per);
+  function buildDots(){ dotsEl.innerHTML=Array.from({length:maxIdx()+1},(_,i)=>`<button type="button" role="tab" aria-label="Show review ${i+1}"></button>`).join(""); $$("button",dotsEl).forEach((b,i)=>b.addEventListener("click",()=>{go(i);restart();})); }
+  function go(i){ const m=maxIdx(); idx=i>m?0:i<0?m:i; track.style.transform=`translateX(${-idx*100/per}%)`; $$("button",dotsEl).forEach((b,j)=>b.setAttribute("aria-current",j===idx?"true":"false")); }
+  function layout(){ const p=perView(); if(p!==per){ per=p; car.style.setProperty("--per",per); buildDots(); } go(Math.min(idx,maxIdx())); }
+  function restart(){ start=performance.now(); prog.style.width="0%"; }
+  function tick(t){ if(!paused){ const e=t-start; prog.style.width=Math.min(100,e/DELAY*100)+"%"; if(e>=DELAY){ go(idx+1); start=t; } } else start=t-(parseFloat(prog.style.width)||0)/100*DELAY; requestAnimationFrame(tick); }
+  $("#carNext").addEventListener("click",()=>{go(idx+1);restart();});
+  $("#carPrev").addEventListener("click",()=>{go(idx-1);restart();});
+  car.addEventListener("mouseenter",()=>paused=true); car.addEventListener("mouseleave",()=>paused=false);
+  car.addEventListener("focusin",()=>paused=true); car.addEventListener("focusout",()=>paused=false);
+  car.addEventListener("keydown",e=>{ if(e.key==="ArrowRight"){go(idx+1);restart();} if(e.key==="ArrowLeft"){go(idx-1);restart();} });
+  let x0=null; vp.addEventListener("pointerdown",e=>{x0=e.clientX;paused=true;});
+  vp.addEventListener("pointerup",e=>{ if(x0!==null){const dx=e.clientX-x0; if(Math.abs(dx)>40){go(idx+(dx<0?1:-1));restart();}} x0=null; paused=false; });
+  vp.addEventListener("pointercancel",()=>{x0=null;paused=false;});
+  document.addEventListener("visibilitychange",()=>{paused=document.hidden;});
+  addEventListener("resize",layout); layout(); restart(); requestAnimationFrame(tick);
+})();
+
+/* =========================================================
+   ENQUIRY FORM
+   ========================================================= */
+(function(){
+  const form=$("#enquiryForm"), date=$("#f-date");
+  const minD=new Date(); minD.setDate(minD.getDate()+CONFIG.minLeadDays);
+  const iso=d=>new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice(0,10);
+  date.min=iso(minD);
+  $("#dateErr").textContent=`Please choose a date from ${minD.toLocaleDateString("en-SG",{day:"numeric",month:"short",year:"numeric"})} onwards.`;
+  const rules={
+    name:v=>v.trim().length>=2,
+    email:v=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()),
+    phone:v=>/^[3689]\d{7}$/.test(v.replace(/[\s-]/g,"").replace(/^\+?65/,"")),
+    type:v=>!!v, quantity:v=>!!v, date:v=>!!v&&v>=date.min
+  };
+  const check=el=>{const ok=rules[el.name](el.value); el.closest(".field").classList.toggle("invalid",!ok); el.setAttribute("aria-invalid",!ok); return ok;};
+  Object.keys(rules).forEach(n=>{const el=form.elements[n];
+    el.addEventListener("blur",()=>{if(el.value) check(el);});
+    ["input","change"].forEach(ev=>el.addEventListener(ev,()=>{ if(el.closest(".field").classList.contains("invalid")) check(el); }));
+  });
+  const phone=form.elements.phone;
+  phone.addEventListener("input",()=>{ let d=phone.value.replace(/\D/g,"").replace(/^65(?=\d{8})/,"").slice(0,8); phone.value=d.length>4?d.slice(0,4)+" "+d.slice(4):d; });
+  let summary="";
+  form.addEventListener("submit",async e=>{
+    e.preventDefault();
+    const bad=Object.keys(rules).filter(n=>!check(form.elements[n]));
+    if(bad.length){ form.elements[bad[0]].focus(); toast("Please check the highlighted fields"); return; }
+    const d=Object.fromEntries(new FormData(form).entries());
+    summary=`Brown Girl Bakes — Quotation enquiry\nName: ${d.name}\nEmail: ${d.email}\nPhone: +65 ${d.phone}\nEnquiry type: ${d.type}\nOrder size: ${d.quantity}\nPreferred date: ${d.date} (${d.fulfilment})\nNotes: ${d.message||"—"}`;
+    $("#doneSummary").textContent=summary;
+    let sent=false;
+    if(CONFIG.formEndpoint){ try{ const r=await fetch(CONFIG.formEndpoint,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(d)}); sent=r.ok; }catch(_){} }
+    if(sent){ $("#doneTitle").textContent="Thank you — enquiry received!"; $("#doneText").textContent="We'll be in touch with your quotation soon. Here's a copy of what you sent:"; }
+    else { $("#doneTitle").textContent="Thank you — almost there!"; $("#doneText").textContent=C.whatsapp?"Your enquiry is ready. Tap “Send via WhatsApp” to send it to us, or copy it and email us at "+C.email+".":"Your enquiry is ready. Copy it below and send it to us at "+C.email+" or via Instagram DM."; }
+    const wa=$("#waBtn"); if(C.whatsapp&&!sent){wa.hidden=false; wa.href=`https://wa.me/${C.whatsapp}?text=${encodeURIComponent(summary)}`;} else wa.hidden=true;
+    form.classList.add("sent"); form.scrollIntoView({behavior:"smooth",block:"center"});
+  });
+  $("#copyBtn").addEventListener("click",async()=>{ try{ await navigator.clipboard.writeText(summary); toast("Enquiry copied"); }catch(_){ toast("Select the text above to copy"); } });
+  $("#resetBtn").addEventListener("click",()=>{ form.reset(); $$(".field.invalid",form).forEach(f=>f.classList.remove("invalid")); form.classList.remove("sent"); });
+})();
+let tt; function toast(m){ const t=$("#toast"); t.textContent=m; t.classList.add("show"); clearTimeout(tt); tt=setTimeout(()=>t.classList.remove("show"),2600); }
+</script>
+</body>
+</html>
